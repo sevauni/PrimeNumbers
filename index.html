@@ -29,7 +29,8 @@
         <div class="inputbox">
             <div></div>
             <div class="inputbox-text">
-                <input type="text" id="number" maxlength="20" placeholder="Enter Number">
+                <input type="text" id="number" maxlength="10" placeholder="Enter Number"
+                    onkeypress="return (event.charCode !==8 && event.charCode ===0 || (event.charCode >= 48 && event.charCode <= 57))">
             </div>
         </div>
         <script src="script.js"></script>
