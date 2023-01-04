@@ -66,9 +66,16 @@ body {
     align-items: center;
     justify-content: flex-start;
     gap: 30px;
+    
+    animation-name: answeranimation;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    justify-self: center;
 }
 
-.inputbox-text input{
+.inputbox-text input {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
@@ -79,9 +86,23 @@ body {
     grid-column: 2 / -2;
     grid-row: 5;
 
+
+
 }
 
-.inputbox-text input:focus{
+.inputbox-text input:focus {
     border: 0;
     outline-width: 0;
+}
+
+
+@keyframes answeranimation {
+    from {
+        justify-self: end;
+        width: 100%;
+    }
+    to {
+        justify-self: end;
+        width: 14em;
+    }
 }

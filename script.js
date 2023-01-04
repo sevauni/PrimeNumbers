@@ -6,3 +6,7 @@
 //     console.log("test");
 //     return false;
 // });
+
+
+const inputField = document.querySelector("#number");
+console.log(inputField.getBoundingClientRect(inputField));
