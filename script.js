@@ -5,7 +5,6 @@ const searchButton = document.querySelector(".inputbox-text-button");
 const inputElement = document.querySelector(".inputbox");
 const resultText = document.querySelector(".result-prime");
 const inputBox = document.querySelector("#number");
-const buttonImg = document.querySelector("#search-button");
 let ready = false;
 
 

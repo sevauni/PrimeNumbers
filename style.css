@@ -20,14 +20,14 @@ body {
 .grid-wrapper {
     display: grid;
     grid-template-columns: 10% 1fr 1fr 10%;
-    grid-template-rows: 10% 2fr 1fr 2% 1fr 15%;
+    grid-template-rows: 10% 2fr 1fr 2% 1fr 5% 15%;
 }
 
 .grid-wrapper header {
     grid-column: 2;
     grid-row: 2 / 3;
     align-self: center;
-    justify-self: start
+    justify-self: center;
 }
 
 .grid-wrapper header h1 {
@@ -205,4 +205,12 @@ body {
     font-size: 1em;
     color: white;
     text-decoration: none; 
+}
+
+.button{
+    grid-column: 2 / 4;
+    grid-row: 7;
+    align-self:stretch;
+    justify-self:center;
+    margin-top: 20px;
 }
