@@ -1,30 +1,39 @@
 * {
+
     margin: 0 0;
     padding: 0 0;
+    min-height: 100%;
     box-sizing: border-box;
 }
 
+:root {
+    --number-element-final-size: 13em;
+    --background-text-input-color: rgb(255, 255, 255);
+}
+
+
 body {
-    background-color: #1F3FE7;
+    background: rgb(31, 63, 231);
+    background: linear-gradient(152deg, rgba(31, 63, 231, 1) 72%, rgba(141, 150, 199, 1) 100%);
 }
 
 .grid-wrapper {
     display: grid;
     grid-template-columns: 10% 1fr 1fr 10%;
-    grid-template-rows: 2% 2fr 1fr 2% 1fr 10%;
+    grid-template-rows: 10% 2fr 1fr 2% 1fr 15%;
 }
 
 .grid-wrapper header {
     grid-column: 2;
     grid-row: 2 / 3;
     align-self: center;
-    justify-self: center;
+    justify-self: start
 }
 
 .grid-wrapper header h1 {
     font-family: 'Roboto';
     font-style: normal;
-    font-size: 5em;
+    font-size: 4em;
     line-height: 1em;
     color: white;
     font-weight: bold;
@@ -55,36 +64,83 @@ body {
     width: 18em;
 }
 
+.result-prime {
+    grid-column: 2;
+    grid-row: 5;
+    justify-self: start;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 4em;
+    line-height: 1em;
+    color: white;
+    font-weight: bold;
+    opacity: 0%;
+    z-index: -1;
+}
+
+.result-prime-play {
+    animation-name: answer-text;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
 .inputbox {
     grid-column: 2 / -2;
     grid-row: 5;
     background-color: rgb(255, 255, 255);
+    background-color:var(--background-text-input-color);
     border-radius: 30px;
     align-self: stretch;
     justify-self: stretch;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 30px;
-    
+    justify-content: space-between;
+    align-items: stretch;
+    padding-left: 30px;
+
+}
+
+.inputbox-play {
     animation-name: answeranimation;
-    animation-duration: 4s;
+    animation-duration: 1.5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+}
 
-    justify-self: center;
+.inputbox-text-button {
+    width: 5em;
+    margin-right: 30px;
+    /* change with js to get all numbers 4* numberamount -0.5* numberaomunt */
+}
+
+.inputbox-text-button-play {
+    animation-name: answeranimation-search-button;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    
+}
+
+.inputbox-text-button img {
+    width: inherit;
+
 }
 
 .inputbox-text input {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
-    font-size: 4em;
+    font-size: 8ch;
+    background-color:var(--background-text-input-color);
     color: rgb(12, 11, 11);
     border: 0;
-    width: 90%;
-    grid-column: 2 / -2;
-    grid-row: 5;
+    width: 85%;
+    
 
 
 
@@ -96,13 +152,57 @@ body {
 }
 
 
+
+
+
 @keyframes answeranimation {
     from {
         justify-self: end;
         width: 100%;
     }
+
     to {
         justify-self: end;
-        width: 14em;
+        width: var(--number-element-final-size);
     }
+}
+
+
+@keyframes answer-text {
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
+
+
+@keyframes answeranimation-search-button {
+    from {
+        opacity: 100%;
+    }
+
+    to {
+        /* display: none; */
+        /* opacity: 0%;    */
+        display: none;
+        width: 0%;
+    }
+}
+
+.page-reload{
+    display: block;
+    grid-column: 2 / 4;
+    grid-row: 6 / 7;
+    align-self:center;
+    justify-self:center;
+    margin-top: 20px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1em;
+    color: white;
+    text-decoration: none; 
 }

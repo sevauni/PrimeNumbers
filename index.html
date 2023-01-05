@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="icon" type="image/png" href="./favicon.png">
+
 </head>
 
 <body>
@@ -26,13 +29,18 @@
             </h1>
         </section>
         <img src="./logo.svg" alt="logo">
+        <div class="result-prime">Your number is prime!</div>
         <div class="inputbox">
-            <div></div>
             <div class="inputbox-text">
                 <input type="text" id="number" maxlength="6" placeholder="Enter Number"
                     onkeypress="return (event.charCode !==8 && event.charCode ===0 || (event.charCode >= 48 && event.charCode <= 57))">
             </div>
+            <div class="inputbox-text-button">
+                <img id="search-button" src="./search-icon.svg" alt="search">
+            </div>
+
         </div>
+        <a href="." class="page-reload">Reload page</a>
         <script src="script.js"></script>
     </div>
 </body>
